@@ -1,0 +1,19 @@
+# Intellij
+*.iml
+*/*.iml
+ 
+# Keystore files
+#*.jks
+#gradle wrapper
+gradle/
+/venv/
+ 
+#some local files
+*/.settings/
+*/.DS_Store
+.DS_Store
+*/.idea/
+.idea/
+gradlew
+gradlew.bat
+unused.txt

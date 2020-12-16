@@ -1,0 +1,8 @@
+    SELECT a.* FROM (
+		select m.*,m.day1+m.day2+m.day3 from (select
+			code,
+			(select s.name from tb_agent_type s where s.code=t.code),
+			sum(case when date_format(t.createtime,'%Y-%m-%d')=curdate() then 1 else 0 end) as day1,
+			sum(case when date_format(t.createtime,'%Y-%m-%d')=date_sub(curdate(),interval 1 day) then 1
+			when date_format(t.createtime,'%Y-%m-%d')=date_sub(curdate(),interval 2 day) then 1 else 0
+			end) as day2,
